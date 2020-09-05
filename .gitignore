@@ -1,4 +1,6 @@
-/node_modules/
+node_modules
+debug.log
+mydatabase
 static/jet
 static/django-redactor
 static/docs
@@ -6,4 +8,5 @@ static/jet.dashboard
 static/range_filter
 static/cosmeticsyou-old
 static/admin
+static/rangefilter
 

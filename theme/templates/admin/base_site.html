@@ -14,19 +14,10 @@
             margin: 1em 0 0 1.5em;
             font-size: 1em;
             line-height: 1.5;
-            transform: scale(1);
-            -webkit-transform: scale(1);
             transition: 0.3s ease;
-            -webkit-transition: 0.3s ease;
             margin: 0 auto;
+            box-shadow: 0 10px 15px -4px rgba(0, 0, 0, .3);
         }
-        .notifications:hover {
-            transform: scale(1.03);
-            -webkit-transform: scale(1.03);
-            box-shadow: 0 10px 15px -4px rgba(0, 0, 0, .5);
-        }
-        .notifications:hover
-        box-shadow: 0 0 15px -3px rgba(0, 0, 0, .5);
         .notifications:hover .notifications__icon_active {
             animation: none;
         }
@@ -79,7 +70,10 @@
             padding: 0.5em 1em;
             position: relative;
             background: #f7f7f7;
-            box-shadow: inset 0 0 15px -5px rgba(0, 0, 0, .5);
+        }
+
+        .notificationsListModel:nth-child(2) {
+            border-radius: 0 0 10px 10px;
         }
         .notifications__icon {
 

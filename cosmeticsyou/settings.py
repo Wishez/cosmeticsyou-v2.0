@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'fvjh6gw1gdd^9-(heryu*$&oarv!+jr_g96ok26j4ed86r7g*q'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['cosmeticsyou.ru', 'www.cosmeticsyou.ru']
+ALLOWED_HOSTS = ['cosmeticsyou.ru', 'www.cosmeticsyou.ru', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    'rangefilter',
 #    'raven.contrib.django.raven_compat',
     'pages',
 ]
@@ -95,6 +96,8 @@ WSGI_APPLICATION = 'cosmeticsyou.wsgi.application'
 
 DATABASES = {
     'default': {
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': 'mydatabase',
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'alive_cosmeticsyou_db_1',
         'USER': 'cosmeticsyou',

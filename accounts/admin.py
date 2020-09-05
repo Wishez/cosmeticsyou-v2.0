@@ -1,13 +1,15 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
 from myadmin.admin import admin_site
+from django.contrib.admin import DateFieldListFilter
 from .models import *
+from rangefilter.filter import DateRangeFilter
 
 class ConsultantAdmin(admin.ModelAdmin):
     list_per_page = 10
     list_display = ('last_name', 'first_name', 'consultant_num', 'phone_number', 'email', 'status', 'refferal_url', 'url_to_personal_room',)
     # date_hierarchy = 'last_name'
-    list_filter = ('status', 'last_name', 'first_name', 'middle_name', 'citizenship', 'city', 'region',)
+    list_filter = ('status', 'last_name', 'first_name', 'middle_name', 'citizenship', 'city', 'region', ('registered_date', DateRangeFilter),)
     filter_horizontal = ('user_lead', 'user_lead_1', 'user_lead_2',)
     search_fields = (
         'last_name',
@@ -70,7 +72,7 @@ class ConsultantAdmin(admin.ModelAdmin):
 class RelatedConsultantAdmin(admin.ModelAdmin):
     list_per_page = 10
     list_display = ('last_name', 'first_name',  'middle_name', 'consultant_num', 'refferal_url', 'url_to_personal_room', 'email',)
-    list_filter = ('last_name', 'first_name', 'middle_name', 'consultant_num',)
+    list_filter = ('last_name', 'first_name', 'middle_name', 'consultant_num', ('registered_date', DateRangeFilter))
     filter_horizontal = ('user_lead', 'user_lead_1', 'user_lead_2',)
     search_fields = (
         'last_name',

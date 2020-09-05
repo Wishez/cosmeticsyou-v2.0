@@ -230,7 +230,9 @@ class EmailMessagesSetting(models.Model):
         max_length=20,
     )
     def __str__(self):
-        return self.is_active
+        if self.is_active == 'Активная группа': return 'Активная'
+
+        return 'Неактивная'
     class Meta:
         verbose_name = _('Email сообщение')
         verbose_name_plural = _('Email сообщения')
