@@ -1,0 +1,148 @@
+header#header.header.parent(
+	itemscope,
+    itemtype="https://schema.org/Organization"
+)
+	nav.navigation.parent.child#navigation(role="navigation")
+		a#brand.brand(href="{% url 'index' %}")
+			h1.brand__title(
+				itemprop="name"
+			) Oriflame
+		ul.topNavigation.child.parent
+			li.topNavigationItem.topNavigationItem_shop.child(
+		   		role="presentation"
+			)
+				a.topNavigationItem__refer.not-follow(
+				rel='notfollow',
+				href="http://beautystore.oriflame.ru/502181"
+				) 
+					.imageContainer.imageContainer_shopping-bag
+						figure.imageContainer__image.imageContainer__image_shopping-bag
+					span.visible-hidden-smLess Интернет магазин
+			li.topNavigationItem.topNavigationItem_registration.registrationButton.registrationButton_red.child(
+			  	role="presentation"
+		 		class="{% if active_page == 'registration' %}registrationButton_active{% endif %}"
+			)
+				a.topNavigationItem__refer.registrationButton__refer(
+					href="{% url 'registration' %}", 
+					class="{% if active_page == 'registration' %}topNavigationItem__refer_active{% endif %}"
+				) Регистрация
+		ul.contacts.child
+			li.contactsItem(
+				itemscope,
+		    	itemtype="https://schema.org/ContactPoint"
+			)
+				span.contactsItem__label.visible-hidden-xs Email:&thinsp;
+				a.contactsItem__refer(
+			        href="mailto:{{ settings.email }}",
+			        itemprop="email"
+			    ) {{ settings.email }}
+			li.contactsItem(
+				itemscope,
+	      		itemtype="https://schema.org/ContactPoint"
+			)
+				span.contactsItem__label.visible-hidden-xs Телефон:&thinsp;
+				a.contactsItem__refer(
+			        href="tel:{{ settings.email }}",
+			        itemprop="telephone"
+			    ) {{ settings.phone }}
+		.callback.child.parent.centered
+			button.callback__button.showPopup(data-popup-id='#popupCallback', aria-pressed="false")
+				.imageContainer.imageContainer_callback
+					figure.imageContainer__image.imageContainer__image_callback
+			#popupCallback.callbackFormWrapper.description.description_purple.description_left.description_beneath.visible-hidden
+				h2.description__title.parent Обратный вызов
+					button.closeButton.child(data-popup-id='#popupCallback', aria-pressed="false")
+						i.fa.fa-close.fa-1x
+				form#callbackForm.descriptionContent.callbackForm.parent(method="post")
+					| {% csrf_token %}
+					| {% for field in callback %}
+					.controller.parent.child(
+						title="{% if field.field.required %}Поле необходимо заполнить.{% else %}Поле можно оставить пустым.{% endif %}"
+					)
+						label.controller__label.child {{ field.label }}
+							| {% if field.field.required %}
+							span.controller_required *
+							| {% endif %}
+						.controller__icon.imageContainer.child(
+							class="imageContainer_{{ field.name }}"
+						)
+							figure.imageContainer__image(
+								class="imageContainer__image_{{ field.name }}"
+							)
+						| {{ field }}
+						| {{ field.errors }}
+					| {% endfor %}
+					button.registrationButton.callbackForm__button.registrationButton_red(type='submit', aria-pressed="false")
+						span.registrationButton__refer Заказать
+		ul#bottomNavigation.bottomNavigation.child.parent
+			li.bottomNavigationItem.child.parent(
+			   role="presentation",
+					class="{% if active_page == 'home' %}bottomNavigationItem_active{% endif %}"
+			)
+				a.bottomNavigationItem__refer(
+					href="{% url 'index' %}",
+					class="{% if active_page == 'home' %}bottomNavigationItem__refer_active{% endif %}"
+				) Главная
+			li.bottomNavigationItem.child.parent(
+			   role="presentation",
+					class="{% if active_page == 'business' %}bottomNavigationItem_active{% endif %}"
+			)
+				a.bottomNavigationItem__refer(
+					href="{% url 'business' %}",
+					class="{% if active_page == 'business' %}bottomNavigationItem__refer_active{% endif %}"
+				) Структура бизнеса
+			li.bottomNavigationItem.child.parent(
+			   role="presentation",
+					class="{% if active_page == 'shares' %}bottomNavigationItem_active{% endif %}"
+			)
+				a.bottomNavigationItem__refer(
+					href="{% url 'shares' %}",
+					class="{% if active_page == 'shares' %}bottomNavigationItem__refer_active{% endif %}"
+				) Акции
+			li.bottomNavigationItem.child.parent(
+			  role="presentation",
+					class="{% if active_page == 'media' %}bottomNavigationItem_active{% endif %}"
+			)
+				a.bottomNavigationItem__refer(
+					href="{% url 'media' %}",
+					class="{% if active_page == 'media' %}bottomNavigationItem__refer_active{% endif %}"
+				) Медиа контент
+		section.popupContacts.child.parent.centered
+			h2.visible-hidden Высплывающие контакты
+			button.popupContacts__button.showPopup(data-popup-id='#popupContacts', aria-pressed="false")
+				.imageContainer.imageContainer_contacts
+					figure.imageContainer__image.imageContainer__image_contacts
+			address.popupContacts__description.description.description_purple.description_right.description_beneath.visible-hidden#popupContacts
+				h3.description__title.popupContacts__title.parent Филипп журавлёв
+					button#closeContactsButton.closeButton.child(data-popup-id='#popupContacts', aria-pressed="false")
+						i.fa.fa-close.fa-1x
+				ul.descriptionContent.popupContactsList
+					li.contactsItem(
+						itemscope,
+				    	itemtype="https://schema.org/ContactPoint"
+					)
+						span.contactsItem__label.visible-hidden-xs Email:&thinsp;
+						a.contactsItem__refer(
+					        href="mailto:{{ settings.email }}",
+					        itemprop="email"
+					    ) {{ settings.email }}
+					li.contactsItem(
+						itemscope,
+			      		itemtype="https://schema.org/ContactPoint"
+					)
+						span.contactsItem__label.visible-hidden-xs Телефон:&thinsp;
+						a.contactsItem__refer(
+					        href="tel:{{ settings.phone }}",
+					        itemprop="telephone"
+					    ) {{ settings.phone }}
+					li.contactsItem(
+						itemscope,
+			      		itemtype="https://schema.org/ContactPoint"
+					)
+						span.contactsItem__label.visible-hidden-xs Адрес:&thinsp;
+						a.contactsItem__refer.not-follow(
+					        href="{{ settings.addressHref }}", 
+					        itemprop="streetAddress"
+					    ) {{ settings.address }}
+			  
+	

@@ -1,0 +1,33 @@
+.contacts(
+    itemscope,
+    itemtype="https://schema.org/Organization"
+  )
+    h3.contacts__title.title Контакты
+    address.contacts__item(
+      itemprop="address",
+      itemscope,
+      itemtype="https://schema.org/PostalAddress"
+    ) 
+      span.address__label Адрес: 
+      a.address__item(
+        href="{{ settings.addressHref }}", 
+        itemprop="streetAddress"
+      ) {{ settings.address }}
+    .contacts__item.tel(
+      itemscope,
+      itemtype="https://schema.org/ContactPoint"
+    )
+      span.tel__label Телефон: 
+      a.tel__item(
+          href="tel:{{ settings.phone }}",
+        itemprop="telephone"
+      ) {{ settings.phone }}
+    .contacts__item.email(
+      itemscope,
+      itemtype="https://schema.org/ContactPoint"
+    )
+      span.email__label E-mail: 
+      a.email__item(
+        href="mailto:{{ settings.email }}",
+        itemprop="email"
+      ) {{ settings.email }}

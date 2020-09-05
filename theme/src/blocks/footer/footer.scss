@@ -1,0 +1,16 @@
+.footer {
+  border-top-style: double;
+  border-top-width: 3px;
+  border-color: $gray;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  font-size: (14em / 16);
+  color: lighten($nightBlack, 25%);
+  @include breakpoint($xxs) {
+    padding-top: 10%;
+    padding-bottom: 15%;
+  }
+}
+@import "contacts/contacts.scss";
+@import "info/info.scss";
+@import "copyright/copyright.scss";

@@ -1,0 +1,14 @@
+| {% extends 'base.html' %}
+
+| {% block title  %}
+title Успешная регистрация!
+| {% endblock %}
+| {% block content %}
+// Header
+section.success.parent.centered.singleShare
+	h1.mainTitle Успешная регистрация!
+	p Вы успешно прошли регистрацию. Менеджер свяжется с вами в течение 12-ти часов. <br><br>Возможно, вам будет интересно почитать о  
+		a(href="{% url 'business' %}", title="Страница структуры бизнеса") структуре нашего бизнеса 
+		| и взглянуть 
+		a(href="{% url 'business' %}#ladder", title="Карьерная лестница в Oriflame.") на будущие перспективы.
+| {% endblock %}

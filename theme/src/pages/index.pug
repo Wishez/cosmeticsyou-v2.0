@@ -1,0 +1,231 @@
+| {% extends 'base.html' %}
+- 
+	var slides = [
+		{
+			'name': 'hike',
+			'description': 'Мы команда консультантов. Работаем с Oriflame, зарабатываем на продаже различных полезных предметов: разнообразная косметика, аксессуары и вкусные, но и, самое главное, полезные продукты. А самый главный доход идёт с сформированной команды! Мы никогда не скучаем и имеем кучу бонусов.'
+		},
+		{
+			'name': 'team',
+			'description': 'Мы любим своих товарищей и стараемся помогать им развиваться в сфере, где работаем. Если у вас есть желание делать дело, мы готовы приложить все усилия для достижения результата!'
+		},
+		{
+			'name': 'business',
+			'description': 'Помимо нашей поддержки, вы будете обладать разными привилегиями на разнообразные предметы в каталогах oriflame. Вы и ваши близкие будете выглядеть и пахнуть ещё лучше за дешево! Или же делать бизнес на стороне;).'
+		},
+		{
+			'name': 'quest',
+			'description': 'Мы создаём для консультантов акции, участие в которых сулит богатство тому, кто выполнит все  условия акции. Вы любите интересные задания?'
+		},
+		{
+			'name': 'registration',
+			'description': "Пройдя регистрацию, вы официально станете любимым членом нашей замечательной команды!"
+		}];
+		var chains = [
+			{
+				'name': 'programm',
+				"image": "programm.png",
+				"title": "Стартовая программа",
+				"description": "Стартовая программа — это квест. Суть квеста заключается в прохождение каких-либо условий для достижения награды."
+			},
+			{
+				'name': 'group',
+				"image": "group.png",
+				"title": 'Задание "Стартовой программы"',
+				"description": "Чтобы выполнить квест, нужно вступить в группу  и размещать заказы, за которые вы получите опыт в виде бонусных балов."
+			},
+			{
+				'name': 'stage',
+				"image": "stage.png",
+				"title": 'Этапы "Статовой программы"',
+				"description": "Кстати говоря, достигнув отметки в 100 бонусных балов, вы передёте на следущий этап квеста и сделаете шаг к более ценной награде!"
+			},
+			{	
+				'name': 'gifts',
+				"image": "gifts.png",
+				"title": "Количество этапов",
+				"description": "Всего 4 этапа с экспоненциально увеличивающейся выгодой. Убедитесь в этом сами! "
+			}
+		];
+		var items = [
+			{
+				"title": "1 этап",
+				"itemName": "Набор первого этапа",
+				'name': 'step_1',
+				"description": "Питательный крем для рук и тела\n\nМолоко и Мед - Золотая серия (код 31602)\n\nКрем-мыло Молоко и мед – Золотая серия (код 31604)\n\nУвлажняющий крем для душа Молоко и мед – Золотая серия (код 31605)\n\nСпециальное смягчающее средство Нежная забота (код 1276)",
+				"profit": "1171",
+				"comparePrice": "199",
+				"price": "1370"
+			},
+			{
+				"title": "2 этап",
+				"itemName": "Набор второго этапа",
+				'name': 'step_2',
+				"description": "Дневной крем, выравнивающий тон кожи, с SPF 20 Защита и осветление (код 25206)\n\nНочной крем, выравнивающий тон кожи Защита и осветление (код 25207)\n\nКрем для век Невероятный эффект (код 25264)\n\nМногофункциональная губная помада 5-в-1, The ONE Colour Stylist Дивный Пион (код 25264)\n\nМногофункциональная тушь для ресниц 5-в-1 The ONE Wonderlash Черный (код 30719)",
+				"profit": "2571",
+				"comparePrice": "199",
+				"price": "2770"
+			},
+			{
+				"title": "3 этап",
+				"itemName": "Набор третьего этапа",
+				'name': 'step_3',
+				"description": "Губная помада Золотой соблазн Giordani Gold Очаровательный Пионовый (код 22748)\n\nПарфюмерная вода Miss Giordani (код 30399)\n\nУльтраудлиняющая тушь для ресниц Giordani Gold (код 32079)\n\nАнтивозрастная тональная основа Giordani Gold Слоновая Кость (код 32049)",
+				"profit": "4161",
+				"comparePrice": "199",
+				"price": "4360"
+			},
+			{
+				"title": "4 этап",
+				"itemName": "Набор для женщин",
+				'name': 'w_step_4',
+				"description": "Вэлнэс Пэк для женщин (код 22791)\n\nТуалетная вода Eclat Femme (код 30128)\n\nСыворотка для лица против морщин NovAge Эколлаген (код 31147)",
+				"profit": "5601",
+				"comparePrice": "199",
+				"price": "5800",
+				'secondName': 'm_step_4',
+				"secondItemName": "Набор для мужчин",
+				'secondDescription': 'Вэлнэс Пэк для мужчин (код 22793)\n\nТуалетная вода Eclat Homme (код 30173)\n\nПена для бритья Норд Ориджинал (код 32002)\n\nБальзам после бритья Норд Ориджинал (код 32004)\n\nШампунь для волос и тела Норд Ориджинал (код 32005)\n\nСпрей дезодорант-антиперспирант 24-часового действия Норд Ориджинал (код 32005)',
+				"secondProfit": "5601",
+				"secondComparePrice": "199",
+				"secondPrice": "5800"
+			},
+		];
+	var FAQ = [
+		{
+			"title": "— Что такое ORIFLAME?",
+			"paragraphs": ["Компания, стоящая в авангарде, несущая свой штандарт в разработке и продаже косметических, гигиенических средств, здоровой агропромышленной продукции и украшений для мужчин, женщин и детей. Так можно описать компанию, с которой мы работаем."]
+		},
+		{
+			"title": "— Что ORIFLAME производит?",
+			"paragraphs": ["Продукцию Oriflame производят высококлассные научные инженеры. В своей работе, они применяют не менее высоколассное оборудование, беря лучшее сырьё из природы. Они, как шаманы современного мира, смешивающие в своём котле фрукты, цветы и самые разнообразные экзотические растения. "]
+		},
+		{
+			"title": "— в чём смысл жизни ORIFLAME?",
+			"paragraphs": ["Разрабатывая косметику, специалисты придерживаются разработке продукта, имеющий не только декоративные свойства, но и поддерживающий организм в тонусе настолько, насколько это возможно.", "Велнес — это деньги, потраченные на то, чтобы чувствовать себя более здоровым, даже если вы не “больны” по обычным медицинским параметрам. Сегодня главная потребность большинства людей не в деньгах, а в здоровье."]
+		}
+	];
+	var catalogs = [
+		{
+			"href": 'http://ru.oriflame.com/ecatalogue/502181?per=201609',
+			"color": "red" 
+		},
+		{
+		"href": 'http://ru.oriflame.com/ecatalogue/502181?per=201609',
+		"color": "purple" 
+		},
+		{
+		"href": 'http://ru.oriflame.com/ecatalogue/502181?per=201609',
+		"color": "red" 
+		},
+		{
+		"href": 'http://ru.oriflame.com/ecatalogue/502181?per=201609',
+		"color": "purple" 
+		}
+	];
+| {% block content %}
+.mainSlider
+	h2.visible-hidden Слайдер
+	#mainSlider.owl-carousel
+		each slide, i in slides
+			.slide
+				.imageContainer(class="imageContainer_" + slide.name)
+					figure.imageContainer__image(class="imageContainer__image_" + slide.name)
+				p.slide__description.parent.centered(class="slide__description_" + slide.name)= slide.description
+					if slide.name == 'registration'
+						span.slide__button.registrationButton.registrationButton_purple
+							a.registrationButton__refer(href="{% url 'registration' %}") Зарегистрироваться
+section.programm.parent.centered#programm
+	h2.programm__title.child С чёго стоит начать?  
+	each chain in chains
+		article.chain.parent
+			h3.chain__title.visible-hidden= chain.title
+			.chain__image.imageContainer.child(class='imageContainer_'+chain.name)
+				figure.imageContainer__image(class='imageContainer__image_'+chain.name)
+			p.chain__paragraph.child.parent.centered= chain.description
+//- begin items
+ul.items.parent.restrictBlock
+	each item in items 
+		//- begin item
+		li.item.item_upper.child.parent.centered
+			if item.secondName
+				//- begin choices
+				ul.choices.parent.child
+					li.choice.child
+						button.choice__button.button.button_purple(
+							data-src='/static/cosmeticsyou/img/steps/w_step_4.jpg', 
+							data-popup-id="#" + item.name,
+							aria-pressed="false"
+						) Женщинам
+					li.choice.child
+						button.choice__button.button.button_red(
+							data-src='/static/cosmeticsyou/img/steps/m_step_4.jpg',
+						 	data-popup-id="#" + item.secondName,
+						 	aria-pressed="false"
+						) Мужчинам
+				//- end choices
+			h3.item__title= item.title
+			.imageContainer.item__image(class="imageContainer_" + item.name)
+				if item.secondName
+					figure#figureWithChoice.imageContainer__image.showPopup(
+						data-popup-id="#" + item.name,
+						class="imageContainer__image_" + item.name
+					)
+				else
+					figure.imageContainer__image.showPopup(
+						data-popup-id="#" + item.name,
+						class="imageContainer__image_" + item.name
+					)
+
+			.itemDescription.description.description_black.description_inline.visible-hidden(id= item.name)
+				h4.description__title.parent= item.itemName
+					button.item__closeButton.closeButton.child(data-popup-id="#" + item.name, aria-pressed="false")
+						i.fa.fa-close.fa-1x
+				.description__content
+					p.itemDescription__description= item.description
+					p.itemDescription__price Обычная цена: 
+						strong #{item.price}₽
+					p.itemDescription__comparePrice Цена на новом этапе: 
+						strong #{item.comparePrice}₽
+					p.itemDescription__profit Профит: 
+						strong #{item.profit}₽
+			if item.secondName
+				.itemDescription.description.description_black.visible-hidden.description_inline(id= item.secondName)
+					h4.description__title.parent= item.secondItemName
+						button.item__closeButton.closeButton.child(data-popup-id="#" + item.secondName, aria-pressed="false")
+							i.fa.fa-close.fa-1x
+					.description__content
+						p.itemDescription__description= item.secondDescription
+						p.itemDescription__price Обычная цена: 
+							strong #{item.secondPrice}₽
+						p.itemDescription__comparePrice Цена на новом этапе: 
+							strong #{item.secondComparePrice}₽
+						p.itemDescription__profit Профит: 
+							strong #{item.secondProfit}₽
+		//- end item
+//- end items
+//- begin registration__main
+.registrationButton.main__registrationButton.registrationButton_red.registrationButton_centered
+	a.registrationButton__refer(href="{% url 'registration' %}") Регистрация
+//- end registration__main
+//- begin questions
+section.questions
+	h2.visible-hidden Часто задаваемые вопросы
+	//- begin question
+	each question in FAQ
+		article.question
+			h3.question__title= question.title
+			each answer in question.paragraphs
+				p.question__paragraph= answer
+
+//- end questions
+//- begin catalogs
+section.catalogs
+	h2.catalogs__title Каталоги
+	ul.catalogsList#catalogs.owl-carousel
+		each catalog, i in catalogs
+			li.catalog.slide(class="catalog_"+ catalog.color, data-index= i)
+				a.catalog__refer(href= catalog.href)
+					img.image(data-lazy="http://ru.oriflame.com/catalogue-image.png")
+//- end catalogs
+| {% endblock %}

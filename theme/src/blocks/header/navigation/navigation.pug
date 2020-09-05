@@ -1,0 +1,56 @@
+nav.navContent__navigation.navigation.collapse.navbar-collapse#collapsable(role="navigation")
+  ul#nav.navigation__navList.navList.nav.navbar-nav.navbar-right
+    li.navList__navItem.navItem(
+       role="presentation",
+       class="{% if active_page == 'home' %}active{% endif %}"
+    )
+      a.navItem__refer(href="{% url 'index' %}") Главная
+    li.navList__navItem.navItem(
+       role="presentation",
+       class="{% if active_page == 'shares' %}active{% endif %}"
+    )
+      a.navItem__refer(href="{% url 'shares' %}") Акции
+    li.navList__navItem.navItem(
+       role="presentation"
+    )
+      a.navItem__refer.anchor(
+        rel='notfollow',
+        href="http://beautystore.oriflame.ru/502181"
+      ) Интернет магазин
+    li.dropdown.navList__navItem.navItem(
+      role="presentation",
+      class="{% if active_page == 'business' %}active{% endif %}"
+    )
+      a.dropdown-toggle.navItem__refer(
+        href="#",
+        data-toggle="dropdown",
+        role="button",
+        aria-haspopup="true",
+        aria-expanded="false",
+        aria-labelby='#opportunities'
+      ) Возможности 
+         ul.dropdown-menu#opportunities
+           li.navList__navItem.navItem(
+             role="presentation",
+             class="{% if active_page == 'business' %}active{% endif %}"
+          )
+             a(href="{% url 'business' %}") Бизнес
+          
+    li.navList__navItem.navItem(
+      role="presentation",
+      class="{% if active_page == 'registration' %}active{% endif %}"
+    )
+      a.navItem__refer(href="{% url 'registration' %}") Регистрация
+    li.navList__navItem.navItem(
+      role="presentation",
+      class="{% if active_page == 'media' %}active{% endif %}"
+    )
+      a.navItem__refer(href="{% url 'media' %}") Видео
+    li.navList__navItem.navItem(
+      role="presentation", 
+      class="{% if active_page == 'contacts' %}active{% endif %}"
+    )
+      a.navItem__refer(href="{% url 'contacts' %}") Контакты
+      
+button#btnTop.navigation__btnTop(href="#header") 
+  i.fa.fa-chevron-circle-up.fa-3x(aria-hidden="true")

@@ -1,0 +1,70 @@
+.navContent__navigation {
+  width: span(8);
+  @include last;
+  margin-top: 30px;
+  @include breakpoint(max-width 1199px) {
+    @include span(12);
+    padding-left: 0;
+    font-size: (15em / 16);
+    margin-top: 0;
+  }
+  @include breakpoint(max-width 768px) {
+    @include span(12);
+    text-align: center;
+    margin-left: auto!important;
+    margin-right: auto!important;
+    padding: 0;
+  }
+} 
+
+.navigation__navList{
+  font-size: (14em / 16);
+  & .active .navItem__refer {
+    color: $white !important;
+    background-color: $darkGray !important;
+  }
+  @include breakpoint(max-width 1199px) {
+    float: left !important;
+  }
+  @include breakpoint(max-width 768px) {
+    float:none;
+    width: span(12);
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.navList__navItem {
+  &:hover .navItem__refer {
+    color: #fff !important;
+    background-color: #000 !important;
+  }
+  @include breakpoint(max-width 768px) {
+     width: span(12);
+  }
+}
+
+.navItem__refer {
+  transition: color 1s, background 1s;
+}
+
+.navigation__btnTop {
+  position: fixed;
+  bottom: 2vw;
+  right: 5vw;
+  z-index: 999;
+  background: transparent;
+  & i {
+    color: $nightBlack;
+  }
+}
+.dropdown-menu {
+  width: 100% !important;
+  text-align: center;
+  min-width: auto;
+  padding: 0em 0 1em;
+} 
+
+.navList__navItem:hover .dropdown-menu .navItem__refer {
+  color: #fff !important;
+}

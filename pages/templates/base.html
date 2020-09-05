@@ -1,0 +1,164 @@
+{% load static %}<!DOCTYPE html><html class="no-js" amp lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">{% if meta %}<meta name="description" content="{{ meta }}">{% endif %}<meta name="format-detection" content="telephone={{ settings.phone }}"><link rel="dns-prefetch" href="https://cosmeticsyou.ru"><link rel="prefetch" href="/static/cosmeticsyou/css/main.css"><link rel="prefetch" href="/static/cosmeticsyou/js/main.js"><link rel="prefetch" href="/static/cosmeticsyou/js/media.js"><link rel="prerender" href="/"><link rel="prerender" href="/registration"><link rel="prerender" href="/business"><link rel="prerender" href="/media"><link rel="prerender" href="/shares"><link rel="preload" href="/static/cosmeticsyou/js/media.js" as="script"><link rel="apple-touch-icon" sizes="57x57" href="/static/cosmeticsyou/img/appIcons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/static/cosmeticsyou/img/appIcons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/static/cosmeticsyou/img/appIcons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/static/cosmeticsyou/img/appIcons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/static/cosmeticsyou/img/appIcons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/static/cosmeticsyou/img/appIcons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/static/cosmeticsyou/img/appIcons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/static/cosmeticsyou/img/appIcons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/cosmeticsyou/img/appIcons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/static/cosmeticsyou/img/appIcons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/static/cosmeticsyou/img/appIcons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/static/cosmeticsyou/img/appIcons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/static/cosmeticsyou/img/appIcons/favicon-16x16.png">
+<link rel="manifest" href="/static/manifest.json">
+<meta name="msapplication-TileColor" content="#333">
+<meta name="msapplication-TileImage" content="/static/cosmeticsyou/img/appIcons/ms-icon-144x144.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="theme-color" content="#f1f1f1"><link rel="canonical" href="https://cosmeticsyou.ru/"><meta http-equive="X-UA-Compatible" content="IE=edge"><link rel="stylesheet" href="{% static 'cosmeticsyou/css/fonts.css' %}" media="none" onload="if(media!=='all')media='all'" lazyload="1"><noscript><link rel="stylesheet" href="{% static 'cosmeticsyou/css/fonts.css' %}"></noscript><link rel="stylesheet" href="{% static 'cosmeticsyou/css/main.css' %}" media="none" onload="if(media!=='all')media='all'"><noscript><link rel="stylesheet" href="{% static 'cosmeticsyou/css/main.css' %}"></noscript>{% if title %}<title>{{ title|safe }}</title>{% else %}
+{% block title %}
+{% endblock %}
+{% endif %}<style>.sk-chasing-dots {
+  position: fixed;
+  top: 40%;
+  left: calc(50% - 30px);
+  width: 60px;
+  height: 60px;
+
+  -webkit-animation: sk-chasingDotsRotate 2s infinite linear;
+          animation: sk-chasingDotsRotate 2s infinite linear; }
+.curtains {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 100;
+  -webkit-transition: opacity .3s ease-in-out, z-index .3s ease-in-out;
+  -o-transition: opacity .3s ease-in-out, z-index .3s ease-in-out;
+  transition: opacity .3s ease-in-out, z-index .3s ease-in-out;
+  will-change: opacity;
+  opacity: 1;
+}
+.curtains_hidden {
+    opacity: 0;
+    z-index: -100;
+}
+.curtains {
+  top: 0;
+  left: 0;
+  background-color: #f7f7f7;
+}
+
+.sk-chasing-dots .sk-child {
+  width: 60%;
+  height: 60%;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+
+  border-radius: 100%;
+  -webkit-animation: sk-chasingDotsBounce 2s infinite ease-in-out;
+          animation: sk-chasingDotsBounce 2s infinite ease-in-out; }
+.sk-chasing-dots .sk-dot1 {
+  background-color: #99303B;
+}
+.sk-chasing-dots .sk-dot2 {
+  top: auto;
+  bottom: 0;
+  background-color: #654178;
+  -webkit-animation-delay: -1s;
+          animation-delay: -1s; }
+
+@-webkit-keyframes sk-chasingDotsRotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+@keyframes sk-chasingDotsRotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+@-webkit-keyframes sk-chasingDotsBounce {
+  0%, 100% {
+    -webkit-transform: scale(0);
+            transform: scale(0); }
+  50% {
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+
+@keyframes sk-chasingDotsBounce {
+  0%, 100% {
+    -webkit-transform: scale(0);
+            transform: scale(0); }
+  50% {
+    -webkit-transform: scale(1);
+            transform: scale(1); } }</style></head><body><div class="curtains"><div class="sk-chasing-dots">
+  <div class="sk-child sk-dot1"></div>
+  <div class="sk-child sk-dot2"></div>
+</div>
+</div><header class="header parent" id="header" itemscope itemtype="https://schema.org/Organization"><nav class="navigation parent child" id="navigation" role="navigation"><a class="brand materialShadow parent v-centered" id="brand" href="{% url 'index' %}"><h1 class="brand__title parent centered width_fill" itemprop="name"> <svg class="width_fill" viewBox="0 0 173 64" aria-hidden="true" role="img"><use xlink:href="#siteLogo"></use></svg><span class="brand__signification spacing_five">Сайт независимого консультанта</span></h1></a><ul class="topNavigation child parent centered column"><li class="topNavigationItem topNavigationItem_shop" role="presentation"><a class="topNavigationItem__refer not-follow" rel="notfollow" href="http://beautystore.oriflame.ru/502181"> <div class="imageContainer imageContainer_shopping-bag"><figure class="imageContainer__image imageContainer__image_shopping-bag"></figure></div><span class="visible-hidden-smLess">Личный интернет магазин</span></a></li><li class="topNavigationItem topNavigationItem_registration registrationButton materialShadow registrationButton_red {% if active_page == 'registration' %}registrationButton_active{% endif %}" role="presentation"><a class="topNavigationItem__refer registrationButton__refer {% if active_page == 'registration' %}topNavigationItem__refer_active{% endif %}" href="{% url 'registration' %}">Регистрация</a></li></ul><ul class="contacts child materialShadow leftPadding"><li class="font-size_16 spacing_five font-decorative contactsItem" itemscope itemtype="https://schema.org/ContactPoint"><span class="color_gray display_none-1367">Консультант по красоте &mdash; </span><span class="color_white inlineParent v-centered" itemprop="contactPoint" itemscope itemtype="http://schema.org/Person">Наталья Учувадова</span></li><li class="contactsItem" itemscope itemtype="https://schema.org/ContactPoint"><a class="contactsItem__refer inlineParent v-centered" href="mailto:{{ settings.email }}" itemprop="email">
+<svg class="contactsItem__label" width="1em" height="1em"  viewBox="0 0 512 512" role="image" aria-hidden="true">
+	<use xlink:href="#envelopeIcon" />
+</svg>
+	{{ settings.email }}	
+</a></li><li class="contactsItem" itemscope itemtype="https://schema.org/ContactPoint"><a class="contactsItem__refer inlineParent v-centered" href="tel:{{ settings.email }}" itemprop="telephone">
+	<svg class="contactsItem__label" width="1em" height="1em"  viewBox="0 0 320 512" role="image" aria-hidden="true">
+		<use xlink:href="#phoneIcon" />
+	</svg>
+	{{ settings.phone }}
+</a>
+</li></ul><div class="callback child parent centered"><button class="callback__button showPopup" data-popup-id="#popupCallback" aria-pressed="false"><div class="imageContainer imageContainer_callback"><figure class="imageContainer__image imageContainer__image_callback"></figure></div></button><div class="callbackFormWrapper description description_purple description_left description_beneath visible-hidden" id="popupCallback"><h2 class="description__title parent">Обратный вызов<button class="closeButton child" data-popup-id="#popupCallback" aria-pressed="false"><svg width="1em" height="1em"  viewBox="0 0 512 512" role="image" aria-hidden="true">
+<use xlink:href="#svgCloseButton" />
+</svg></button></h2><form class="descriptionContent callbackForm parent" id="callbackForm" method="post">{% csrf_token %}
+{% for field in callback %}<div class="controller parent child" title="{% if field.field.required %}Поле необходимо заполнить.{% else %}Поле можно оставить пустым.{% endif %}"><label class="controller__label child">{{ field.label }}{% if field.field.required %}<span class="controller_required">*</span>{% endif %}</label><div class="controller__icon imageContainer child imageContainer_{{ field.name }}"><figure class="imageContainer__image imageContainer__image_{{ field.name }}"></figure></div>{{ field }}
+{{ field.errors }}</div>{% endfor %}<button class="registrationButton callbackForm__button registrationButton_red" type="submit" aria-pressed="false"><span class="registrationButton__refer">Заказать</span></button></form></div></div><ul class="bottomNavigation child parent" id="bottomNavigation"><li class="bottomNavigationItem child parent {% if active_page == 'home' %}bottomNavigationItem_active{% endif %}" role="presentation"><a class="bottomNavigationItem__refer {% if active_page == 'home' %}bottomNavigationItem__refer_active{% endif %}" href="{% url 'index' %}">Главная</a></li><li class="bottomNavigationItem child parent {% if active_page == 'business' %}bottomNavigationItem_active{% endif %}" role="presentation"><a class="bottomNavigationItem__refer {% if active_page == 'business' %}bottomNavigationItem__refer_active{% endif %}" href="{% url 'business' %}">Структура бизнеса</a></li><li class="bottomNavigationItem child parent {% if active_page == 'shares' %}bottomNavigationItem_active{% endif %}" role="presentation"><a class="bottomNavigationItem__refer {% if active_page == 'shares' %}bottomNavigationItem__refer_active{% endif %}" href="{% url 'shares' %}">Акции</a></li><li class="bottomNavigationItem child parent {% if active_page == 'media' %}bottomNavigationItem_active{% endif %}" role="presentation"><a class="bottomNavigationItem__refer {% if active_page == 'media' %}bottomNavigationItem__refer_active{% endif %}" href="{% url 'media' %}">Медиа контент</a></li></ul><section class="popupContacts child parent centered"><h2 class="visible-hidden">Высплывающие контакты</h2><button class="popupContacts__button showPopup" data-popup-id="#popupContacts" aria-pressed="false"><div class="imageContainer imageContainer_contacts"><figure class="imageContainer__image imageContainer__image_contacts"></figure></div></button><address class="popupContacts__description description description_purple description_right description_beneath visible-hidden" id="popupContacts"><h3 class="description__title popupContacts__title parent">Наши контакты<button class="closeButton child" id="closeContactsButton" data-popup-id="#popupContacts" aria-pressed="false"><svg width="1em" height="1em"  viewBox="0 0 512 512" role="image" aria-hidden="true">
+<use xlink:href="#svgCloseButton" />
+</svg></button></h3><ul class="descriptionContent popupContactsList"><li class="contactsItem" itemscope itemtype="https://schema.org/ContactPoint"><span class="contactsItem__label visible-hidden-xs">Email:&thinsp;</span><a class="contactsItem__refer" href="mailto:{{ settings.email }}" itemprop="email">{{ settings.email }}</a></li><li class="contactsItem" itemscope itemtype="https://schema.org/ContactPoint"><span class="contactsItem__label visible-hidden-xs">Телефон:&thinsp;</span><a class="contactsItem__refer" href="tel:{{ settings.phone }}" itemprop="telephone">{{ settings.phone }}</a></li><li class="contactsItem" itemscope itemtype="https://schema.org/ContactPoint"><span class="contactsItem__label visible-hidden-xs">Адрес:&thinsp;</span><a class="contactsItem__refer not-follow" href="{{ settings.addressHref }}" itemprop="streetAddress">{{ settings.address }}</a></li></ul></address></section></nav></header><!-- Main Content--><main class="main" id="main">{% block content %}
+{% endblock %}</main><!-- Footer--><footer class="footer parent"><section class="footerInfo child"><a class="brand brand_footer" id="brand" href="{% url 'index' %}"><h1 class="brand__title brand__title_footer" itemprop="name"> <svg viewBox="0 0 173 64" aria-hidden="true" role="img"><use xlink:href="#siteLogo"></use></svg></h1></a><ul class="contacts contacts_footer child"><li class="contactsItem" itemscope itemtype="https://schema.org/ContactPoint"><a class="contactsItem__refer inlineParent v-centered" href="tel:{{ settings.email }}" itemprop="telephone">
+<svg class="contactsItem__label" width="1em" height="1em"  viewBox="0 0 320 512" role="image" aria-hidden="true">
+	<use xlink:href="#phoneIcon" />
+</svg>
+
+	{{ settings.phone }}
+</a></li><li class="contactsItem" itemscope itemtype="https://schema.org/ContactPoint"><a class="contactsItem__refer inlineParent v-centered" href="mailto:{{ settings.email }}" itemprop="email">
+	<svg class="contactsItem__label" width="1em" height="1em"  viewBox="0 0 512 512" role="image" aria-hidden="true">
+		<use xlink:href="#envelopeIcon" />
+	</svg>
+	{{ settings.email }}	
+</a></li><li class="contactsItem" itemscope itemtype="https://schema.org/ContactPoint"><a class="contactsItem__refer inlineParent v-centered" href="{{ settings.addressHref }}" itemprop="streetAddress">
+	<svg class="contactsItem__label" width="1em" height="1em"  viewBox="0 0 512 512" role="image" aria-hidden="true">
+		<use xlink:href="#streetViewIcon" />
+	</svg>
+	{{ settings.address }}
+</a></li></ul></section><section class="credo child parent centered"><h2 class="visible-hidden">Кредо</h2><p class="credo__paragraph">Будем физически и духовно здоровы, используя качественную и полезную продукцию.</p></section><nav class="navigation navigation_footer child" id="footerNavigation" role="navigation"><ul class="footerNavigation parent"><li class="footerNavigationItem parent {% if active_page == 'home' %}footerNavigationItem_active{% endif %}" role="presentation"><a class="footerNavigationItem__refer child {% if active_page == 'home' %}footerNavigationItem__refer_active{% endif %}" href="{% url 'index' %}">Главная</a></li><li class="footerNavigationItem parent {% if active_page == 'business' %}footerNavigationItem_active{% endif %}" role="presentation"><a class="footerNavigationItem__refer child {% if active_page == 'business' %}footerNavigationItem__refer_active{% endif %}" href="{% url 'business' %}">Структура бизнеса</a></li><li class="footerNavigationItem parent {% if active_page == 'shares' %}footerNavigationItem_active{% endif %}" role="presentation"><a class="footerNavigationItem__refer child {% if active_page == 'shares' %}footerNavigationItem__refer_active{% endif %}" href="{% url 'shares' %}">Акции</a></li><li class="footerNavigationItem parent {% if active_page == 'media' %}footerNavigationItem_active{% endif %}" role="presentation"><a class="footerNavigationItem__refer child {% if active_page == 'media' %}footerNavigationItem__refer_active{% endif %}" href="{% url 'media' %}">Медиа контент</a></li><li class="footerNavigationItem footerNavigationItem_registration registrationButton_red registrationButton materialShadow registrationButton_centered {% if active_page == 'registration' %}registrationButton_active{% endif %}" role="presentation"><a class="footerNavigationItem__refer footerNavigationItem__refer_registration registrationButton__refer child {% if active_page == 'registration' %}topNavigationItem__refer_active{% endif %}" href="{% url 'registration' %}">Регистрация</a></li></ul></nav><div class="copyright child parent centered"><p class="copyright__paragraph">&copy;2016&nbsp;&ndash;&nbsp;2018&nbsp;Сайт&nbsp;независимого&nbsp;консультанта&thinsp;<br>Сделанно при поддержке здоровой пищи от&nbsp;<a class="copyright__refer not-follow" href="https://oriflame.ru">Oriflame</a></p><p class="copyright__paragraph" itemscope itemtype="https://schema.org/Person">Дизайн и разработка:&nbsp;<a class="copyright__refer not-follow" href="https://cosmeticsyou.ru" itemprop="author">Филипп Журавлёв</a></p></div></footer><svg hidden aria-hidden="true"><path id="svgCloseButton" fill="currentColor" d="M323.1 441l53.9-53.9c9.4-9.4 9.4-24.5 0-33.9L279.8 256l97.2-97.2c9.4-9.4 9.4-24.5 0-33.9L323.1 71c-9.4-9.4-24.5-9.4-33.9 0L192 168.2 94.8 71c-9.4-9.4-24.5-9.4-33.9 0L7 124.9c-9.4 9.4-9.4 24.5 0 33.9l97.2 97.2L7 353.2c-9.4 9.4-9.4 24.5 0 33.9L60.9 441c9.4 9.4 24.5 9.4 33.9 0l97.2-97.2 97.2 97.2c9.3 9.3 24.5 9.3 33.9 0z"></path></svg>
+<svg hidden aria-hidden="true">
+<path  id="envelopeIcon" fill="currentColor" d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"/>
+</svg>
+<svg hidden aria-hidden="true">
+<path id="phoneIcon" fill="currentColor" d="M272 0H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h224c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zM160 480c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm112-108c0 6.6-5.4 12-12 12H60c-6.6 0-12-5.4-12-12V60c0-6.6 5.4-12 12-12h200c6.6 0 12 5.4 12 12v312z"/>
+</svg>
+<svg hidden aria-hidden="true">
+<path id="streetViewIcon" fill="currentColor" d="M192 64c0-35.346 28.654-64 64-64s64 28.654 64 64c0 35.346-28.654 64-64 64s-64-28.654-64-64zm112 80h-11.36c-22.711 10.443-49.59 10.894-73.28 0H208c-26.51 0-48 21.49-48 48v104c0 13.255 10.745 24 24 24h16v104c0 13.255 10.745 24 24 24h64c13.255 0 24-10.745 24-24V320h16c13.255 0 24-10.745 24-24V192c0-26.51-21.49-48-48-48zm85.642 189.152a72.503 72.503 0 0 1-29.01 27.009C391.133 365.251 480 385.854 480 416c0 46.304-167.656 64-224 64-70.303 0-224-20.859-224-64 0-30.123 88.361-50.665 119.367-55.839a72.516 72.516 0 0 1-29.01-27.009C74.959 343.395 0 367.599 0 416c0 77.111 178.658 96 256 96 77.249 0 256-18.865 256-96 0-48.403-74.967-72.606-122.358-82.848z" />
+</svg>
+<svg hidden aria-hidden="true">
+<g id="siteLogo" fill="currentColor">
+<path d="M74.912 45.609l-1.594-4.904h-0.981l-1.594 4.904-1.594-4.904h-1.226l2.207 6.621h0.981l1.716-4.659 1.594 4.659h0.981l2.207-6.621h-1.226z"/>
+<path d="M18.268 43.525h33.349v0.981h-33.349v-0.981z"/>
+<path d="M59.586 18.636h2.207v14.59h-2.207v-14.59z"/>
+<path d="M70.13 33.226h2.207v-6.13h7.602v-2.084h-7.602v-4.414h8.46v-1.962h-10.667z"/>
+<path d="M25.257 33.471c4.659 0 8.46-3.801 8.46-8.46 0-4.536-3.801-6.621-6.621-6.621-5.517 0-5.885 5.395-5.885 5.395h0.123c0 0 0.981-3.923 4.782-3.923 3.065 0 5.395 2.084 5.395 5.027 0 3.433-2.82 6.253-6.253 6.253-3.31 0-6.375-2.452-6.375-6.866 0-3.433 1.839-6.253 5.027-7.479v-0.123c-4.046 0.613-6.989 4.169-6.989 8.337-0.123 4.659 3.678 8.46 8.337 8.46z"/>
+<path d="M62.038 43.525c-1.226-0.245-1.594-0.49-1.594-0.981s0.368-0.736 1.103-0.736c0.613 0 1.226 0.245 1.716 0.613l0.613-0.858c-0.613-0.49-1.471-0.858-2.33-0.858-1.349 0-2.207 0.736-2.207 1.962s0.736 1.594 2.207 1.962c1.226 0.245 1.471 0.49 1.471 0.981s-0.49 0.858-1.103 0.858c-0.858 0-1.471-0.368-2.084-0.858l-0.736 0.858c0.736 0.736 1.717 1.103 2.697 1.103 1.349 0 2.329-0.736 2.329-1.962 0-1.349-0.736-1.839-2.084-2.084z"/>
+<path d="M52.72 33.226l-4.414-5.885c2.207-0.613 3.678-2.207 3.678-4.291 0-2.697-2.207-4.536-5.395-4.536h-6.376v14.59h2.207v-5.395h3.556l4.046 5.395 2.697 0.123zM42.421 25.747v-5.149h4.046c2.084 0 3.31 0.858 3.31 2.452s-1.349 2.575-3.31 2.575h-4.046z"/>
+<path d="M83.126 44.506h3.31v-1.103h-3.31v-1.594h3.678v-1.103h-4.782v6.498h4.782v-0.981h-3.678z"/>
+<path d="M108.751 18.513l-6.621 14.713h2.329l1.716-3.801h7.111l1.594 3.801h2.452l-6.621-14.713h-1.962zM106.912 27.464l2.697-6.253 2.697 6.253h-5.395z"/>
+<path d="M125.058 22.437l4.659 6.866 0.245 0.368 0.245-0.368 4.536-6.866v10.789h2.207v-14.59h-2.084l-4.904 7.356-4.904-7.356h-2.084v14.59h2.084z"/>
+<path d="M125.058 43.525h30.897v0.981h-30.897v-0.981z"/>
+<path d="M147.249 31.142v-4.291h7.602v-2.084h-7.602v-4.169h8.582v-1.962h-10.789v14.59h10.789v-2.084z"/>
+<path d="M115.862 45.241l-3.556-4.536h-1.103v6.498h1.226v-4.536l3.556 4.536h0.981v-6.498h-1.103z"/>
+<path d="M89.87 18.636h-2.084v14.59h10.054v-2.084h-7.969z"/>
+<path d="M102.989 44.506h3.31v-1.103h-3.31v-1.594h3.678v-1.103h-4.782v6.498h4.904v-0.981h-3.801z"/>
+<path d="M93.793 40.705h-2.452v6.498h2.452c2.084 0 3.433-1.471 3.433-3.31 0.123-1.717-1.349-3.188-3.433-3.188zM93.793 46.222h-1.349v-4.414h1.349c1.349 0 2.207 0.981 2.207 2.207 0.123 1.226-0.858 2.207-2.207 2.207z"/>
+</g>
+</svg><script async src="/static/cosmeticsyou/js/main.js"></script><script>if ('serviceWorker' in navigator) {navigator.serviceWorker.register('/static/sw.js').then(function(reg){console.log('ServiceWorker registration successful with scope: ', reg.scope);}).catch(function(err) {console.log("No it didn't. This happened: ", err)});}</script>{% if settings.widgets %}
+{{ settings.widgets|safe }}
+{% endif %}
+{% block internal_page_script %}
+{% endblock %}</body></html>

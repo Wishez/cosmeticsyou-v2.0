@@ -1,0 +1,27 @@
+// Контейнер формы
+.callbackForm {
+  background-color: #fff;
+  border-width: 6px;
+  color: $nightBlack;
+  padding-bottom: 5%;
+  min-width: 345px;
+  max-width: 345px;
+  border-radius: 10px;
+  display:none;
+   @include breakpoint($xs) {
+    max-width: none;
+    width: 100%; 
+    height: 100%;
+  }
+}
+// Форма
+#callbackForm {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: 7% 0 0;
+}
+@import '__controller.scss';
+@import '__title.scss';
+@import '__callbackSubmitBtn.scss';

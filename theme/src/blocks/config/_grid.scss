@@ -1,0 +1,19 @@
+
+$susy: (use-custom: (em: true), columns: 12, gutters: 0, gutter-position: split, global-box-sizing: border-box);
+
+@include border-box-sizing;
+$border-box-sizing : true;
+$gutters: 0;
+
+.parent {
+	display: flex;
+	flex-flow: row wrap;
+}
+.child {
+	flex: 1 0 20%;
+}
+
+.centered {
+	justify-content: center;
+	align-items: center;
+}

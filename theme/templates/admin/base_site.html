@@ -1,0 +1,138 @@
+{% extends "admin/base.html" %}
+{% load i18n admin_urls %}
+
+{% block messages %}
+    {{ block.super }}
+<!-- start notifications -->
+<style>
+        .notifications {
+            color: #f1f1f1;
+            background: #2b3647;
+            padding: 0;
+            border-radius: 10px;
+            width: 23.6875em;
+            margin: 1em 0 0 1.5em;
+            font-size: 1em;
+            line-height: 1.5;
+            transform: scale(1);
+            -webkit-transform: scale(1);
+            transition: 0.3s ease;
+            -webkit-transition: 0.3s ease;
+            margin: 0 auto;
+        }
+        .notifications:hover {
+            transform: scale(1.03);
+            -webkit-transform: scale(1.03);
+            box-shadow: 0 10px 15px -4px rgba(0, 0, 0, .5);
+        }
+        .notifications:hover
+        box-shadow: 0 0 15px -3px rgba(0, 0, 0, .5);
+        .notifications:hover .notifications__icon_active {
+            animation: none;
+        }
+        .notificationsList {
+            display: flex;
+            flex-flow: column wrap;
+            margin: 0;
+            padding: 0;
+
+        }
+        .notifications__title {
+            position: relative;
+            padding: 1em 1em;
+            margin: 0;
+
+        }
+        .notifications__icon {
+            position: absolute;
+            background: #f7f7f7;
+            padding: 0.2em;
+            width: 1.4em;
+            color: #212121;
+            border-radius: 50%;
+            margin: 0;
+            text-align: center;
+            box-shadow: 0 0 15px -3px rgba(0, 0, 0, .5);
+
+        }
+        .notifications__icon_bottom {
+            bottom: -0.9em;
+
+        }
+        .notifications__icon_top {
+            top: -0.9em;
+            right: 2em;
+            display: none;
+        }
+        .notifications__icon_right {
+            right: -0.9em;
+            top: 0.3em;
+        }
+        .notifications__icon_active {
+            color: #f7f7f7;
+            animation:  wobble 2s infinite ease;
+            animation-delay: 4s;
+            background: #836516;
+        }
+        .notificationsListModel {
+            list-style-type: none;
+            padding: 0.5em 1em;
+            position: relative;
+            background: #f7f7f7;
+            box-shadow: inset 0 0 15px -5px rgba(0, 0, 0, .5);
+        }
+        .notifications__icon {
+
+        }
+        @keyframes wobble {
+          0% {
+            transform: none;
+          }
+
+          15% {
+            transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+          }
+
+          30% {
+            transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+          }
+
+          45% {
+            transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+          }
+
+          60% {
+            transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+          }
+
+          75% {
+            transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+          }
+
+          100% {
+            transform: none;
+          }
+        }
+    </style>
+<aside class="notifications">
+        <h3 class="notifications__title">Новые консультанты&nbsp;
+            <span class="notifications__icon notifications__icon_top {% if total_new_consultants > 0 %}notifications__icon_active{% endif %}">{{ total_new_consultants }}</span>
+        </h3>
+        <ul class="notificationsList">
+            <li class="notificationsListModel">
+                <a href="https://cosmeticsyou.ru/admin/accounts/user/" class="notificationsListModel__refer">
+                    Консультанты&nbsp;
+                    <span class="notifications__icon notifications__icon_right {% if quantity_new_consultants > 0 %}notifications__icon_active{% endif %}">{{ quantity_new_consultants }}</span>
+                </a>
+            </li>
+            </li>
+            <li class="notificationsListModel">
+                <a href="https://cosmeticsyou.ru/admin/accounts/refferalconsultant/" class="notificationsListModel__refer">
+                    Реферальные консультанты&nbsp;
+                    <span class="notifications__icon notifications__icon_right {% if quantity_new_referral_consultants > 0 %}notifications__icon_active{% endif %}">{{ quantity_new_referral_consultants }}</span>
+                </a>
+            </li>
+        </ul>
+    </aside>
+    <!-- end notifications -->
+{% endblock %}

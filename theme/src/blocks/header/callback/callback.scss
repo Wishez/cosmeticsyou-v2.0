@@ -1,0 +1,31 @@
+.callback__openFormBtn, .callback {
+  position: fixed;
+  z-index: 0; 
+}
+.callbackForm, .callbackForm__input, .callbackForm__textarea, .callbackForm__title {
+  border-style: solid;
+  border-color: #e5e5e5;
+} 
+.callback, .callback__openFormBtn {
+  bottom: 77px;
+}
+
+.callback,  {
+  right: 70px;
+  z-index: -10;
+  @include breakpoint($xs) {
+    width: 100vw;
+    height: 100%;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+.callbackForm__title, #callblockFrom, .callbackForm__input, .callbackForm__textarea {
+  width: 100%;
+}
+
+@import "__openFormBtn.scss";
+@import "__closeFormBtn.scss";
+@import 'callbackForm/callbackForm.scss';
+@import "__success.scss";

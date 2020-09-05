@@ -1,0 +1,16 @@
+| {% extends "base.html" %}
+
+| {% block content %}
+//- include ../snippets/shares/main/single_share.pug
+section.singleShare
+	h1.mainTitle.singleShare__title {{ page.title }}
+	p.singleShareMeta
+			time.singleShareMeta__published(datetime="{{ page.published_date }}") Опубликовано: {{ page.published_date }}
+	.singleShareContent
+		| {% if page.img %}
+		.singleShareContent__mainImage
+			img(src="/media/{{ page.img }}", alt="")
+		| {% endif %}
+		| {{ page.additional_text|safe }}
+  		
+| {% endblock %}

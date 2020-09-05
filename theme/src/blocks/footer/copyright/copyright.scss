@@ -1,0 +1,10 @@
+@import "__me/__me.scss";
+@import "officialSite/officialSite.scss";
+
+.copyright {
+  padding: 4% 0 3%;
+  border-top: 1px solid $gray;
+  @include breakpoint($xxs) {
+    padding-top: 10%;
+  }
+}

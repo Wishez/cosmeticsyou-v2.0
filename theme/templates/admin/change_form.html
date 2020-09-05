@@ -1,0 +1,165 @@
+{% extends 'admin/change_form.html' %}
+{% load static %}
+
+{% block admin_change_form_document_ready %}
+{{ block.super }}
+<style>
+    .aligned label {
+        width: auto;
+    }
+    .colM .aligned .vLargeTextField, .colM .aligned .vXMLLargeTextField {
+        margin-top: 0.5em;
+        font-size: 13px;
+    }
+    .visible-hidden {
+      white-space: nowrap;
+      overflow: hidden;
+      clip: rect(1px, 1px, 1px, 1px);
+      width: 1px;
+      height: 1px;
+      position: absolute;
+    }
+    .variable {
+        color: #050709;
+        cursor:pointer;
+        font-weight: bold;
+    }
+    .helpText, .variable {
+        display: inline-block;
+        transition: 0.3s ease;
+        -webkit-transition: 0.3s ease;
+        transform:scale(1);
+        -webkit-transform:scale(1);
+    }
+    .variable:hover, .variable:hover + .helpText {
+        transform: scale(1.02);
+        -webkit-transform:scale(1.02);
+        color: #050709 !important;
+    }
+
+    .copiedHint {
+      position: fixed;
+      top: 0;
+      right: 0;
+      border: 2px solid #99303B;
+      background: #f7f7f7;
+      border-radius: 2px;
+      display: none;
+      color: #212121;
+      text-align: center;
+      padding: 1em .5em;
+      max-width: 200px;
+      line-height: 1.5;
+    }
+
+    .variablesHint {
+        color: #888;
+        padding: 1em 1em;
+        background-color: #ececec;
+        border-radius: 3px;
+        max-width: 30rem;
+        box-shadow: 0 5px 10px -4px rgba(0, 0, 0, 0.6);
+
+    }
+</style>
+<script>
+    (function($) {
+        var _screwed = function(selector, callback, event) {
+
+            event = event ? event : 'click';
+
+            $(document).on(event, selector, callback);
+        };
+        function SelectText(element) {
+            var doc = document
+                , text = element
+                , range, selection
+            ;
+
+            if (doc.body.createTextRange) {
+                range = document.body.createTextRange();
+                range.moveToElementText(text);
+                range.select();
+            } else if (window.getSelection) {
+                selection = window.getSelection();
+                range = document.createRange();
+                range.selectNodeContents(text);
+                selection.removeAllRanges();
+                selection.addRange(range);
+            }
+        }
+
+        $(function() {
+            var variableClass = '.variable';
+
+            _screwed(variableClass, function() {
+                $(variableClass).css('color', '#bbb');
+            }, 'mouseover'); // end bouseiver
+
+            _screwed(variableClass, function() {
+                $(variableClass).css('color', '#212121');
+            }, 'mouseout'); // end mouseout
+
+            _screwed(variableClass, function(event) {
+
+                 SelectText(event.target);
+
+                 try {
+                    var successful = document.execCommand('copy');
+                    var msg = successful ? 'successful' : 'unsuccessful';
+
+                  } catch (err) {
+                    console.log('Oops, unable to copy');
+                  }
+            });// end click
+            var ctrPressed = false;
+            _screwed(window, function(event) {
+                if (event.which === 17) {
+                   ctrPressed = true;
+                }
+            }, 'keydown');
+            var $copiedHint = $("<div class='copiedHint'></div>")
+                .html("Текст скопирован.<br/>Отпустите <strong>Ctrl</strong>!")
+                .appendTo($('body'));
+
+            _screwed(window, function(event) {
+              ctrPressed = false;
+              $copiedHint.hide('fast');
+            }, 'keyup');
+
+            var $copiedText = $('<div class="visible-hidden"></div>')
+              .appendTo($('body'));
+
+            _screwed('input, textarea', function(event) {
+                 if (ctrPressed) {
+                     var text = event.target.value
+                     if (text) {
+                         $copiedText.text(text);
+
+                         SelectText($copiedText[0]);
+
+                         try {
+                            var successful = document.execCommand('copy');
+                            var msg = successful ? 'successful' : 'unsuccessful';
+
+                            $copiedHint.css({
+                              left: event.clientX,
+                              top: event.clientY - 70,
+                            })
+                            $copiedHint.show('fast');
+
+                          } catch (err) {
+                              console.log('Oops, unable to copy');
+                          }
+
+                     }
+                 }
+            });
+        }); // end load
+
+
+    })(django.jQuery);
+</script>
+
+
+{% endblock %}

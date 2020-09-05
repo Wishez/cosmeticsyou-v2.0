@@ -1,0 +1,184 @@
+.footer {
+	font-size: em(21);
+}
+.brand_footer {
+	@include round(em(2), 'top-right');
+	@include round(0, 'bottom-right');
+	background-color: $purple;
+
+}
+.brand__title_footer {
+	@include breakpoint($sm-less) {
+		margin-top: 0;
+		padding-bottom: .4em;
+	}
+}
+.navigation_footer {
+	min-width: span(3);
+	@include round(em(2), 'top-left');
+	@include round(0, 'bottom-left');
+	@include breakpoint($sm-less) {
+		max-height:  em(300, 21);
+		order: 2;
+		min-width: span(5);
+	    background-color: $gray;
+	}
+	@include breakpoint($xxs) {
+		// min-height:  em(301.5, 21);
+		top: em(-220.8, 21) $i;
+	}
+}
+.contacts_footer {
+	padding-left: 3em;
+	// @include round(em(2), 'bottom-right');
+	@include breakpoint($sm-less) {
+		top: em(300, 21);
+		text-align: right;
+		padding-right: 2em;
+		background-color: $purple;
+		
+	}
+	@include breakpoint($xxs) {
+		text-align: left;
+		top: em(300, 21);
+		padding-left: 1em;
+		padding-top: 2.5em;
+	}
+
+}
+	// background-color: $gray;
+.footerInfo, .credo {
+	min-width: span(4.5);
+}
+.footerInfo {
+	@include breakpoint($md-up) {
+		background-color: $purple;
+	}
+	@include breakpoint($sm-less) {
+		min-width: span(12);
+	}
+}
+.credo, .navigation_footer, .contacts_footer {
+	@include breakpoint($sm-less) {
+		position: relative;
+	}
+}
+.credo, .navigation_footer {
+	@include breakpoint($sm-less) {
+		top: em(-189.3, 21);
+	}
+	@include breakpoint($xxs) {
+		min-width: span(12);
+	}
+}
+.credo {
+	padding: 0 2em;
+	@include breakpoint($sm-less) {
+		order: 3;
+		min-width: span(7);
+		padding-left: 3em;
+	}
+	@include breakpoint($xxs) {
+		// order: 2;
+		padding: 1.5em 1em 2em;
+		top: 0;
+	}
+	&__paragraph {
+		margin-top: 0 $i;
+	}
+}
+.footerNavigation {
+	flex-direction: column;
+	justify-content: flex-start;
+	padding: 0;
+	position: relative;
+	@include breakpoint($xxs) {
+		min-height:  em(300, 21);
+	}
+}
+.footerNavigationItem {
+	@include round(em(2), 'bottom-left');
+	@include round(em(2), 'top-left');
+	&:not(.footerNavigationItem_registration) {
+		&, & .footerNavigationItem__refer {
+			height: em(63, 21);
+			min-width: span(12);
+			text-align: center;
+			align-items: center;
+		}
+		& .footerNavigationItem__refer {
+			line-height: 2.75;
+		}
+	}
+	&_active, &:hover {
+		background-color: $purple;
+		color: $white $i;
+	}
+	&:hover .footerNavigationItem__refer , &__refer_active {
+		color: $white $i;
+		background-image: none $i;
+		
+	 }
+	&_registration {
+		// margin: auto;
+		align-self: center;
+		position: absolute;
+    	top: 100%;
+		transform: translateY(9%);
+		width: span(12);
+		max-width: span(8);
+		min-width: span(6);
+		@include breakpoint($sm-less) {
+		}
+		@include breakpoint($xxs) {
+			transform: translateY(-50%);
+			max-width: span(6);
+			align-self: flex-end;
+			margin: 0;
+			margin-left: auto;
+			@include round(0, 'top-right');
+			@include round(0, 'bottom-right');
+		}
+		&:hover, &.registrationButton_active {
+			@include breakpoint($sm-less) {
+				background-color: $darkGray $i;
+			}
+		}
+	}
+	&__refer:not(&__refer_registration) {
+		color: $darkGray;
+	}
+	&__refer {
+		background-image: none;
+		&:hover {
+			background: 0;
+		}
+		&_active {
+		}
+	}
+
+}
+
+.copyright {
+	min-width: span(12);
+	text-align: center;
+	background-color: $darkGray;
+	font-size: em(18, 21);
+	color: $white;
+	min-height: em(134);
+	flex-direction: column;
+	@include breakpoint($sm-less) {
+		order: 4;
+	}
+	@include breakpoint($xxs) {
+		padding: 1.5em 1em 2em;
+		font-size: em(15);
+	}
+	&__refer {
+		$darkenWhite: darken($white, 25%);
+		&:hover, &:focus {
+			color: $darkenWhite;
+			background-image: linear-gradient(to right, $darkenWhite 0%, $darkenWhite 100%);
+		}
+	}
+}

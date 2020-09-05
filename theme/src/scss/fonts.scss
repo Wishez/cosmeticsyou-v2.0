@@ -1,0 +1,43 @@
+@import "../blocks/config/_fonts.scss";
+/* Fonts */
+// =============================================================================
+// Font Face
+// =============================================================================
+
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+  $src: null;
+
+  $extmods: ( eot: "?", svg: "#" + str-replace($name, " ", "_"));
+
+  $formats: (otf: "opentype", ttf: "truetype");
+
+  @each $ext in $exts {
+    $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+    $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+    $src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+  }
+  
+
+  @font-face {
+    font-family: quote($name);
+    font-style: $style;
+    font-weight: $weight;
+    src: $src;
+    font-display: fallback;
+  }
+}
+
+@include font-face($mainFontName, '../fonts/Roboto/Roboto-Regular', normal, normal);
+@include font-face($mainFontName, '../fonts/Roboto/Roboto-Italic', normal, italic);
+@include font-face($mainFontName, '../fonts/Roboto/Roboto-Bold', bold, normal);
+@include font-face($mainFontName, '../fonts/Roboto/Roboto-BoldItalic', bold, italic);
+@include font-face($mainFontName, '../fonts/Roboto/Roboto-Light', 200, normal);
+// @include font-face($mainFontName, '../fonts/Roboto/Roboto-Medium.', normal, normal);
+// @include font-face($mainFontName, '../fonts/Roboto/Roboto-Regular', normal, normal);
+@include font-face($decorativeFontName, '../fonts/Politica/Politica', normal, normal);
+@include font-face($decorativeFontName, '../fonts/Politica/Politica-Bold', bold, normal);
+@include font-face($decorativeFontName, '../fonts/Politica/Politica-BoldItalic', bold, italic);
+@include font-face($decorativeFontName, '../fonts/Politica/Politica-ExtraBold', 800, normal);
+
+@include font-face('FontAwesome', '../fonts/fontawesome-webfont');
+@include font-face('slick', '../fonts/slick');

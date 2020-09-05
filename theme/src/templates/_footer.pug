@@ -1,0 +1,92 @@
+footer.footer.parent
+	section.footerInfo.child
+		a#brand.brand.brand_footer(href="{% url 'index' %}")
+			h1.brand__title.brand__title_footer(
+				itemprop="name"
+			) Oriflame
+		ul.contacts.contacts_footer.child
+			li.contactsItem(
+				itemscope,
+	      		itemtype="https://schema.org/ContactPoint"
+			)
+				span.contactsItem__label.visible-hidden-xs Телефон:&thinsp;
+				a.contactsItem__refer(
+			        href="tel:{{ settings.email }}",
+			        itemprop="telephone"
+			    ) {{ settings.phone }}
+			li.contactsItem(
+				itemscope,
+		    	itemtype="https://schema.org/ContactPoint"
+			)
+				span.contactsItem__label.visible-hidden-xs Email:&thinsp;
+				a.contactsItem__refer(
+			        href="mailto:{{ settings.email }}",
+			        itemprop="email"
+			    ) {{ settings.email }}
+			li.contactsItem(
+				itemscope,
+		    	itemtype="https://schema.org/ContactPoint"
+			)
+				span.contactsItem__label.visible-hidden-xs Адрес:&thinsp;
+				a.contactsItem__refer(
+			        href="{{ settings.addressHref }}", 
+	    			itemprop="streetAddress"
+			    ) {{ settings.address }}
+	section.credo.child.parent.centered
+		h2.visible-hidden Кредо
+		p.credo__paragraph Будем физически и духовно здоровы, используя качественную продукцию, распространяя её среди жильцов вашего жэка.
+
+	nav.navigation.navigation_footer.child#footerNavigation(role="navigation")
+		ul.footerNavigation.parent
+			li.footerNavigationItem.parent(
+			   role="presentation",
+					class="{% if active_page == 'home' %}footerNavigationItem_active{% endif %}"
+			)
+				a.footerNavigationItem__refer.child(
+					href="{% url 'index' %}",
+					class="{% if active_page == 'home' %}footerNavigationItem__refer_active{% endif %}"
+				) Главная
+			li.footerNavigationItem.parent(
+			   role="presentation",
+					class="{% if active_page == 'business' %}footerNavigationItem_active{% endif %}"
+			)
+				a.footerNavigationItem__refer.child(
+					href="{% url 'business' %}",
+					class="{% if active_page == 'business' %}footerNavigationItem__refer_active{% endif %}"
+				) Структура бизнеса
+			li.footerNavigationItem.parent(
+			   role="presentation",
+					class="{% if active_page == 'shares' %}footerNavigationItem_active{% endif %}"
+			)
+				a.footerNavigationItem__refer.child(
+					href="{% url 'shares' %}",
+					class="{% if active_page == 'shares' %}footerNavigationItem__refer_active{% endif %}"
+				) Акции
+			li.footerNavigationItem.parent(
+			  role="presentation",
+					class="{% if active_page == 'media' %}footerNavigationItem_active{% endif %}"
+			)
+				a.footerNavigationItem__refer.child(
+					href="{% url 'media' %}",
+					class="{% if active_page == 'media' %}footerNavigationItem__refer_active{% endif %}"
+				) Медиа контент
+			li.footerNavigationItem.footerNavigationItem_registration.registrationButton_red.registrationButton.registrationButton_centered(
+			  	role="presentation"
+		 		class="{% if active_page == 'registration' %}registrationButton_active{% endif %}"
+			)
+				a.footerNavigationItem__refer.footerNavigationItem__refer_registration.registrationButton__refer.child(
+					href="{% url 'registration' %}", 
+					class="{% if active_page == 'registration' %}topNavigationItem__refer_active{% endif %}"
+				) Регистрация
+	.copyright.child.parent.centered
+		p.copyright__paragraph &copy;2016&nbsp;&ndash;&nbsp;2018&nbsp;Сайт&nbsp;независимого&nbsp;консультанта&thinsp;
+			br
+			| Сделанно при поддержке здоровой пищи от&nbsp;
+			a.copyright__refer.not-follow(href='https://oriflame.ru') Oriflame
+		p.copyright__paragraph(
+			itemscope, itemtype="https://schema.org/Person"
+		) Дизайн и разработка:&nbsp;
+			a.copyright__refer.not-follow(
+				href="https://shining-present.ru/", 
+				itemprop="author"
+			) Филипп Журавлёв

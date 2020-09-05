@@ -1,0 +1,395 @@
+.header {
+	font-size: em(21);
+	position: relative;
+	@include breakpoint($sm-less) {
+		max-height: em(501, 21);
+	}
+	@include breakpoint($xxs) {
+		max-height: em(685, 21);
+	}
+}
+ul {
+	list-style: none;
+}
+.navigation {
+	background-color: $gray;
+	@include breakpoint($sm-less) {
+		height: em(540, 21);
+		background-color: transparent;
+	}
+	@include breakpoint($xxs) {
+		height: auto;
+	}
+}
+
+.brand {
+	// min-width: em(450, 42);
+	display: block;
+	padding-top: .1em;
+	background-color: $purple;
+	text-align: center;
+	font-size: em(42);
+	font-weight: 800; 
+	min-width: 35%;
+	@include breakpoint($sm-less) {
+		order: 1;	
+		min-width: span(6);
+		border-radius: 0;
+	}
+	@include breakpoint($xxs) {
+		min-width: span(12);
+	}
+	&, &:hover {
+		background-size: 0;
+		color: $white $i;
+	}
+	&__title {
+		line-height: 1.4;
+		@include breakpoint($sm-less) {
+    		margin-top: .5em;
+		}
+		@include breakpoint($xxs) {
+			margin-top: 0;
+		}
+	}
+}
+.topNavigation, .contacts {
+	@include breakpoint($sm-less) {
+	    background: 0;
+	}
+}
+.contacts {
+	min-width: 35%;
+	background-color: $purple;
+	line-height: 2.2;
+	padding: 1em 1em 1.5em 5%;
+	@include breakpoint($sm-less) {
+		order: 3;	
+		min-width: span(6);
+		top: -9em;
+	}
+	@include breakpoint($xxs) {
+		order: 2;
+		min-width: span(12);	
+		top: 0;
+		background-color: $purple;
+		padding: 1em 0 1.5em;
+		text-align: center;
+	}
+ }
+.contacts, .popupContacts {
+	@include round(em(2, 21), 'bottom-left');
+}
+ .contactsItem  {
+ 	&__label {
+ 		color: $gray;
+ 	}
+ 	&__refer {
+ 		
+ 	}
+ }
+ .topNavigation, .bottomNavigation {
+ 	&Item {
+		color: $darkGray;
+	 	&__refer {
+	 		background-image: none ;
+	 		// background-size: 0;
+	 		color: inherit ;
+	 	}
+ 	}
+ }
+
+ .topNavigation {
+ 	min-width: 30%;
+	justify-content: space-between;
+	flex-direction: column;
+	align-items: center;
+ 	@include breakpoint($sm-less) {
+		order: 5;	
+		min-width: span(6);
+		flex-direction: row;
+		top: -5.1em;
+	}
+	@include breakpoint($xxs) {
+		order: 4;	
+		min-width: span(12);
+	}
+ }
+.topNavigationItem {
+	&_shop {
+		text-align: center;
+		min-width: 100%;
+		@include flyShadow(false);
+		padding: 0 1em;
+		@include breakpoint($sm-less) {
+	    	max-width: em(122, 21);
+    		min-width: 15%;
+    		padding: 0 0 1em;
+    		align-self: flex-end;
+    		order: 2;
+			background-color: $red;
+			@include round(em(2), 'top-left');
+			@include round(em(2), 'bottom-left');
+		}
+		@include breakpoint($sm-less) {
+			margin-top: 1.4em;
+		}
+		@include breakpoint($xxs) {
+			padding-bottom: .6em;
+			@include round(em(2) $i, 'bottom-left');
+		}
+		&:hover .imageContainer_shopping-bag {
+			transform: rotate(-10deg) translateY(25%);
+		}
+	}
+	&_registration {
+		transform: translate(0, 40%);
+		@include breakpoint($sm-less) {
+			// min-width: em(85, 21);
+			min-width: 50%;
+			max-width: 65%;
+			@include round(0, 'top-left');
+			transform: translate(0, 36%);
+		}
+		@include breakpoint($xxs) {
+			min-width: span(12);
+			@include round(em(2), 'top-left');
+			@include round(0, 'bottom-left');
+			@include round(0, 'bottom-right');
+		}
+	}
+}
+
+
+.topNavigation, .contacts, .callback, .popupContacts {
+	@include breakpoint($sm-less) {
+		position: relative;
+
+	}
+}
+
+ .bottomNavigation {
+	min-width: span(8);
+	justify-content: space-around;
+	padding-bottom: em(36, 21);
+	padding-top: em(72, 21); 
+	padding: 0 1em;
+ 	@include breakpoint($sm-less) {
+ 		background-color: $gray;
+		order: 2;	
+		min-width: span(6);
+		flex-direction: column;
+		justify-content: flex-start;
+		height: em(321);
+		padding: 0;
+	}
+	@include breakpoint($xxs) {
+		order: 3;	
+		min-width: span(12);
+	}
+
+}
+
+.bottomNavigationItem {
+	text-align: center;
+	align-items: flex-end;
+    justify-content: center;
+    @include breakpoint($sm-less) {
+    	flex: 0 0 20%;
+    	align-items: center;
+    }
+    &_active, &:hover, &:focus, &:hover &__refer_active {
+    	@include breakpoint($sm-less) {
+			background-color: $purple;
+			color: $white;
+		}
+    }
+	&__refer {
+		padding-bottom: .8em;
+	    background-image: linear-gradient(to right, $purple 0%, $purple 100%) $i;
+		background-position: 0 2.2em $i;
+		background-size: 2.5em $i;
+		white-space: nowrap;
+ 		&_active, &:hover, &:focus {
+ 			padding-bottom: 1.8em;
+ 			color: $darkGray;
+ 		}
+ 		&_active, &:hover, &:focus, & {
+ 			@include breakpoint($sm-less) {
+ 				padding-bottom: 0;
+ 			}
+ 		}	
+ 		&_active {
+			@include breakpoint($sm-less) {
+				background-image: 0;
+				color: $white $i;
+			}
+ 			
+ 		}
+	}
+}
+ .callback, .brand {
+ 	@include round(em(2, 21), 'bottom-right');
+ 	@include breakpoint($sm-less) {
+ 		@include round(0);
+ 	}
+ }
+ 
+ .callback, .popupContacts {
+ 	z-index: 1;
+ 	position: relative;
+ 	max-width: span(2);
+ 	min-width: span(2);
+ 	background-color: $red;
+ 	padding: .5em 0;
+ 	z-index: 2;
+	@include breakpoint($sm-less) {
+		top: em(-143.7, 21);
+		min-width: 24%;
+	}
+	@include breakpoint($xxs) {
+		top: em(-183, 21);
+	}
+	&:hover {
+		z-index: 3;	
+	}
+	&__button {
+		background-color: transparent;
+		border: 0;
+		width: span(12);
+		height: span(12);
+		position: relative;
+		z-index: 4;
+ 		cursor: pointer;
+	}
+ }
+
+ .callback {
+ 	@include flyShadow(2px 5px 15px 2px $shadow);
+ 	&:hover, &:focus {
+ 		.imageContainer__image_callback {
+ 			transition: .8s ease-in-out;
+			transform: rotate(-360deg);
+		}
+ 	}
+ 	@include breakpoint($sm-less) {
+		order: 6;	
+		@include round(em(2), 'bottom-right');
+	}
+	@include breakpoint($xxs) {
+		margin-left: span(4);
+		padding-bottom: 0;
+		// left: 	
+
+	}
+	
+	
+ }
+ .popupContacts {
+ 	@include flyShadow(-2px 5px 15px 2px $shadow);
+ 	position: relative;
+ 	&:hover, &:focus {
+	 	& .imageContainer__image {
+			transform: rotate(20deg);
+	 	}
+ 	}
+ 	@include breakpoint($sm-less) {
+		order: 7;	
+		@include flyShadow(0 0 15px -1px $shadow);
+		@include round(em(2), 'bottom-right');
+		margin-left: 2.2%;
+	}
+	@include breakpoint($xxs) { 
+		margin-left: 0;
+		@include round(em(2) $i, 'bottom-right');
+
+	}
+	&__title {
+		
+	}
+	&__description {
+ 		font-size: em(24) $i;
+		max-width: em(470, 21);
+		@include breakpoint($xxs) { 
+			margin-left: -200%;
+		}
+	}
+ }
+
+ 
+
+ .callback, .popupContacts, .topNavigationItem_shop {
+	@include breakpoint($xxs) {
+		@include round(0);
+		min-width: span(4);
+	}
+}
+
+.imageContainer {
+	&_callback {
+		@include breakpoint($xxs) {
+			max-width: em(55, 21);
+		}
+	}
+	&_contacts {
+		@include breakpoint($xxs) {
+			max-width: em(50, 21);
+		}
+	}
+	&_shopping-bag {
+		transition: .2s ease-in-out;
+		margin-right: .5em;
+		transform: translateY(25%);
+		@include breakpoint($sm-less) {
+			margin-right: 0;
+		}
+		@include breakpoint($xxs) {
+			transform: translateY(15%);
+		}
+	}
+}
+.imageContainer__image {
+	&_shopping-bag {
+		@include breakpoint($sm-less) {
+			background-image: url('./../img/icons/white_bag.png') $i;
+		}
+	}
+	&_callback_phone {
+		fill: $white;
+	}
+}
+
+.callbackFormWrapper {
+	@include round(0, 'top-left');
+	@include round(0, 'bottom-left');
+	font-size: em(24) $i;
+	& .descriptionContent {
+	}
+	@include breakpoint($xxs) {
+		margin-left: -100%;
+	}
+}
+.popupContactsList {
+	@include round(0, 'top-right');
+	@include round(0, 'bottom-right');
+	// margin-top: 1em;
+	& .contactsItem {
+		&:not(:first-child) {
+			margin-top: 1em;
+		}
+			
+		&__label {
+			display: block;
+		}
+	}
+}
+
+.callbackForm {
+	margin-top: .5em;
+	&__button {
+		// max-width: em(175, 21);
+		cursor: pointer;
+		margin: 1em auto 0;
+		font-size: em(18, 18);
+	}
+}

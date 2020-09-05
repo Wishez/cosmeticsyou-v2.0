@@ -1,0 +1,30 @@
+/**********
+
+  THIRD PARTY
+
+***********/
+// @import "compass";
+@import "breakpoint";
+@import "susy";
+@import "intlTelInput";
+@import "sprite";
+// @import "font-awesome-compass";
+// @import "slick.scss"
+// @import "slick-theme.scss"
+@import "font-awesome-sprockets";
+@import "font-awesome";
+// @import 'bootstrap';
+// @import 'bootstrap-sprockets';
+// @import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "../../bower_components/slick-carousel/slick/slick.scss";
+@import "../../bower_components/slick-carousel/slick/slick-theme.scss";
+/**********
+
+  CUSTOM
+
+***********/
+// Main files.
+@import "../blocks/custom/custom.scss";
+@import "../styles/_header.scss";
+@import "../styles/_main.scss";
+@import "../styles/_footer.scss";

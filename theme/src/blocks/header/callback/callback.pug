@@ -1,0 +1,37 @@
+figure#callbackOpenFormBtn.callback__openFormBtn
+.callback
+  .callbackForm.text-center 
+    h3.callbackForm__title Обратная связь 
+      i#callbackCloseFormBtn.callback__closeFormBtn.fa.fa-times(aria-hidden="true")
+    form#callbackForm(mathod='post')
+      | {% csrf_token %}
+      | {% for field in callback %}
+      .callbackForm__controller
+        | {{ field.label_tag }}
+        | {{ field }}
+        | {{ field.errors }}
+      | {% endfor %}
+      button#callbackSubmitBtn.callbackForm__callbackSubmitBtn.btn.btn-danger(type='submit') Заказать
+//-      .callbackForm__controller
+//-        label(for='name') Имя:
+//-        input#callback_name.callbackForm__input(
+//-          name='name',
+//-          type='text',
+//-          maxlength='30',
+//-          required
+//-        )
+//-      .callbackForm__controller
+//-        label(for='phone') Телефон:
+//-        input#callback_phone.callbackForm__input(
+//-          name='phone',
+//-          type='tel',
+//-          maxlength='24',
+//-          required)
+//-      .callbackForm__controller
+//-        label(for='message') Комментарий:
+//-        textarea#callback_message.callbackForm__textarea(
+//-          name='message',
+//-          type='text',
+//-          maxlength='250',
+//-          required,
+//-          rows='3')

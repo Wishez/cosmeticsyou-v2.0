@@ -1,0 +1,72 @@
+| {% extends "base.html" %}
+| {% load static %}
+
+| {% block content %}
+section.registration.parent.restrictBlock
+	h1.mainTitle.child Регистрация
+
+	form#registrationForm.registrationForm.child(
+	  method="post"
+	)
+		| {% csrf_token %}
+		// Поля формы
+		| {% autoescape on %}
+		| {% for field in form %}
+	  
+		.registrationForm__controller.controller.parent.child(		class="registrationForm__controller_{{ field.name }}", title="{% if field.field.required %}Поле необходимо заполнить.{% else %}Поле можно оставить пустым.{% endif %}"
+		)
+			label.controller__label.child {{ field.label }}
+				| {% if field.field.required %}
+				span.controller_required *
+				| {% endif %}
+
+			.controller__icon.imageContainer.child(
+				class="imageContainer_{{ field.name }}"
+			)
+				figure.imageContainer__image(
+					class="imageContainer__image_{{ field.name }}"
+				)
+			| {{ field }}
+			| {{ field.errors }}
+		| {% endfor %}
+	    
+		.registrationForm__controller.controller.child
+			input#id_user_led.controller__input(name='user_led', type='hidden')
+		| {% endautoescape %}
+		.controller.parent.child
+			input#checkReady.controller__checkbox.child(
+	      		type="checkbox",
+	      		name="checkReady"
+	    	) 
+			label.controller__checkboxLabel.child(for="checkReady") Вы ознакомились с 
+				a.not-follow(href="https://	ru-eshop.oriflame.com/iframe/custom/ru/consultant/Registration.pdf") договором 
+				| и 
+				a.not-follow(href="https://ru-eshop.oriflame.com/iframe/custom/ru/consultant/Registration.pdf") условиями
+				| ?
+		
+		button.registrationButton.registrationButton_centered.registrationForm__button.registrationButton_red(type='submit', disabled, aria-pressed="false")#registrataionSubmitButton
+			span.registrationButton__refer Зерегистрироваться
+	article.registrationIntro.child
+		h2.visible-hidden Плюсы регистрации
+		p.registrationIntro__paragraph После регистрации, вы попадёте в нашу опытную команду, существующая с 1998 года. Мы освоили эту нишу и передадим вам весь опыт, которым владеем сами. 
+		p.registrationIntro__paragraph Вам будут доступны привилегии на покупку большого количества ассортимента швейцарской продукции компании Oriflame со скидкой в 20-34%.
+		p.registrationIntro__paragraph Каждую неделю, вы можете участвовать в специальных распродажах, где скидки достигают 80%! Не дожидаясь этих событий, можно сделать свои первые шаги к успеху со <a href="{% url 'index' %}#programm">стартовой программой</a>, в которой будет выгодные для вас предложения. 
+		p.registrationIntro__paragraph Все ваши заказы, вы можете оформлять на дому, а получать их в месте, которое считаете для себя удобным.
+		p.registrationIntro__paragraph Вы сможете набирать команду, регистрировать её через сайт по своей собственной реферальной ссылке.
+		p.registrationIntro__paragraph Работая в команде, мы уважаем друг друга, помогаем в разнообразных трудностях и идём к успеху зарабатывая вместе!		
+		
+script.
+	var cacheConsultantNumber  = localStorage.getItem('led_consultant_num');
+
+		var consultant_num = "{{ consultant_num }}";
+		if (!cacheConsultantNumber) {
+		  localStorage.setItem('led_consultant_num', consultant_num);
+		} else {
+		  consultant_num = localStorage.getItem('led_consultant_num');
+		}
+
+		document.getElementById('id_user_led').value = consultant_num;
+
+	$L = $L
+		.script("{% static '/cosmeticsyou/js/registration.js' %}")
+| {% endblock %}

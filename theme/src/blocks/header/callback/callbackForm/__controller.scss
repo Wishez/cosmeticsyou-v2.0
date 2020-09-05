@@ -1,0 +1,18 @@
+.callbackForm__controller {
+  margin-top: 10px;
+  font-weight: normal;
+  width: span(8);
+}
+.callbackForm__controller > * {
+  display: block;
+}
+.callbackForm__textarea, .callbackForm__input {
+  border-radius: 5px;
+  border-width: 3px;
+  padding: 3% 0 3% 2%;
+  margin-top: 7px;
+}
+
+.callbackForm__textarea {
+  max-height: 88px;
+}

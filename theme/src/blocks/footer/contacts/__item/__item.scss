@@ -1,0 +1,14 @@
+.address__item, .tel__item, .email__item {
+  transition: color 0.5s;
+  color: $nightBlack;
+  &:hover {
+    color: #bd0d0d !important;
+  }
+  &:visited {
+    color: $nightBlack;
+  }
+}
+
+.contacts__item {
+  margin-top: 20px;
+}

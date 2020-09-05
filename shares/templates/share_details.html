@@ -1,0 +1,3 @@
+{% extends "base.html" %}
+{% block content %}<section class="singleShare"><h1 class="mainTitle singleShare__title">{{ page.title }}</h1><p class="singleShareMeta"><time class="singleShareMeta__published" datetime="{{ page.published_date }}">Опубликовано: {{ page.published_date }}</time></p><div class="singleShareContent">{% if page.img %}<div class="singleShareContent__mainImage"><img src="/media/{{ page.img }}" alt=""/></div>{% endif %}
+{{ page.additional_text|safe }}</div></section>{% endblock %}

@@ -1,0 +1,67 @@
+$figures: 
+	('shopping-bag', 'shopping_bag.png', 512, 512, em(56, 21), true),
+	('callback', 'callback.png', 512, 512, em(101, 21), true), 
+	('contacts', 'contacts.png', 512, 512, em(87, 21), true),
+	('callback_name', 'white_user.png', 512, 512, em(33, 21), true),
+	('callback_phone', 'white-phone.png', 512, 512, em(35, 21), true),
+	('first_name', 'user.png', 512, 512, em(35, 21), true),
+	('last_name', 'user.png', 512, 512, em(35, 21), true),
+	('middle_name', 'user.png', 512, 512, em(35, 21), true),
+	('birthday', 'calendar.png', 512, 512, em(35, 21), true),
+	('passport_data', 'user_card.png', 764, 980, em(35, 21), true),
+	('phone_number', 'phone.png', 512, 512, em(35, 21), true),
+	('email', 'envelope.png', 512, 512, em(35, 21), true),
+	('city', 'city.png', 512, 512, em(35, 21), true),
+	('referral', 'white_user_card.png', 512, 512, em(105), true),
+	('num_home', 'home.png', 512, 512, em(35, 21), true),
+	('street', 'street.png', 512, 512, em(35, 21), true),
+	('region', 'region.png', 512, 512, em(35, 21), true),
+	('num_apartment', 'appartment.png', 512, 512, em(35, 21), true),
+	('birthday', 'calendar.png', 512, 512, em(35, 21), true),
+	('programm', 'chains/programm.jpg', 512, 512, em(210), false),
+	('group', 'chains/group.jpg', 512, 512, em(210), false),
+	('stage', 'chains/stage.jpg', 512, 512, em(210), false),
+	('gifts', 'chains/gifts.jpg', 512, 512, em(210), false),
+	('step_1', 'steps/w_step_1.jpg', 512, 512, em(250), false),
+	('step_2', 'steps/w_step_2.jpg', 512, 512, em(250), false),
+	('step_3', 'steps/w_step_3.png', 512, 512, em(250), false),
+	('w_step_4', 'steps/w_step_4.jpg', 512, 512, em(250), false),
+	('m_step_4', 'steps/m_step_4.jpg', 512, 512, em(250), false);
+
+
+@each $name, $url, $height, $width, $max-width, $isIcon in $figures {
+	
+	@include adaptiveImage(
+		$name, 
+		$max-width, 
+		adaptive($width, $height),
+		$url,
+		$isIcon
+	);
+}
+
+$steps: 
+	('registrationStep', 'man.png', 632, 960, (312 / 16 * 24), -30%, 100%),  
+	('mr_manager',  'warrior.png', 250, 97, (87  / 16 * 24), auto, auto),
+	('mr_diamond_director', 'knight.png', 596, 246, (110 / 16 * 24), 100%, auto),
+	('president', 'gentleman.png', 720, 360, (110 / 16 * 24), auto, auto), 
+	('diamond_president', 'putin.svg', 100, 100, (312 / 16 * 24), em(120, 16), auto);
+
+   
+@each $name, $url, $height, $width, $max-width, $x, $y in $steps {
+	$url: 'ladder/' + $url;
+
+	@include adaptiveImage(
+		$name, 
+		em($max-width, 24), 
+		adaptive($width, $height),
+		$url,
+		false
+	);
+
+	.ladderStep__image_#{$name} {
+		font-size: em(16, 21); 
+		top: #{$y};
+		left: #{$x};
+	}
+}
