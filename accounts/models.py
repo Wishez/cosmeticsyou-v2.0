@@ -230,6 +230,7 @@ def send_notification_to_registered_consultant(instance):
     isRegistered = False
     messages = EmailMessagesSetting.objects.get(is_active=_('Активная группа'))
 
+    if not messages: return
 
     if instance.status == _('Зарегистрированный А'):
         message = messages.registered_a
@@ -272,20 +273,20 @@ def send_notification_about_updated_consultant_number_if_needed(instance):
 @receiver(pre_save, sender=User)
 def pre_save_consultant(sender, instance, **kwargs):
     set_refferal_data(instance, **kwargs)
-    send_notification_to_registered_consultant(instance)
-    send_notification_about_set_consultant_number_if_needed(instance)
-    send_notification_about_updated_consultant_number_if_needed(instance)
+    # send_notification_to_registered_consultant(instance)
+    # send_notification_about_set_consultant_number_if_needed(instance)
+    # send_notification_about_updated_consultant_number_if_needed(instance)
 
 @receiver(pre_save, sender=RefferalConsultant)
 def pre_save_referral_consultant(sender, instance, **kwargs):
     set_refferal_data(instance, **kwargs)
-    send_notification_to_registered_consultant(instance)
-    send_notification_about_set_consultant_number_if_needed(instance)
-    send_notification_about_updated_consultant_number_if_needed(instance)
+    # send_notification_to_registered_consultant(instance)
+    # send_notification_about_set_consultant_number_if_needed(instance)
+    # send_notification_about_updated_consultant_number_if_needed(instance)
 
 @receiver(pre_save, sender=RelatedConsultant)
 def pre_save_related_consultant(sender, instance, **kwargs):
     set_refferal_data(instance, **kwargs)
     # send_notification_to_registered_consultant(instance)
-    send_notification_about_set_consultant_number_if_needed(instance)
-    send_notification_about_updated_consultant_number_if_needed(instance)
+    # send_notification_about_set_consultant_number_if_needed(instance)
+    # send_notification_about_updated_consultant_number_if_needed(instance)

@@ -17,7 +17,6 @@ class MessageParser():
         self.consultant = consultant
         # Проверка на обычноое ообщение
         if isMessageKey:
-            print(isMessageKey, message)
             self.email_setting  = EmailMessagesSetting.objects.get(is_active='Активная группа')
             setting = self.email_setting
             self.message = getattr(setting, message, '')
@@ -25,8 +24,6 @@ class MessageParser():
         else:
             self.message = message
             self.subject = subject
-
-
 
         self.variables = [
             'refferal_url',
@@ -48,6 +45,8 @@ class MessageParser():
         )
 
     def __call__(self):
+        if not self.email_setting: return
+
         self.parse_text()
         self.send_parsed_text_to_email()
 
